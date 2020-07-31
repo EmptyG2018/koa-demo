@@ -1,0 +1,13 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+	body
+
+		- var isShowBaidu = isShowBaidu === 2 ? true : false
+		if isShowBaidu
+			a(href="https://www.baidu.com") 百度
+
+		each item in list
+			div= item.text
