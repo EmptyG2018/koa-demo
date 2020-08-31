@@ -1,8 +1,12 @@
-const koa = require("koa");
-const middleware = require("./middleware");
-const { port } = require("./config/app");
-const app = new koa();
+const koa = require('koa')
+const middleware = require('./middleware')
+const { port } = require('./config/app')
+const app = new koa()
 
-middleware(app);
+app.context.global = '全局好玩de'
 
-app.listen(port);
+middleware(app)
+
+app.listen(port)
+
+console.log(`已启用服务，当前端口为${port}`)
